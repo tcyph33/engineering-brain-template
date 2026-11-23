@@ -133,9 +133,10 @@ never trusted blindly. See [0004](decisions/0004-weak-pointers-to-published-cont
 ## Principles
 
 `principles/README.md` holds each principle as a bold imperative plus a one-line why. They
-are not ranked; which one weighs more depends on the situation. A principle that needs more
-gets `principles/<name>.md`: what it means in practice (a good and a bad example, ideally a
-real one), when it doesn't apply, and how it pulls against other principles.
+are not ranked; which one weighs more depends on the situation. Every principle also has
+`principles/<name>.md` for how to apply it: what it looks like in practice (good and bad
+examples, real ones when you have them), how it pulls against other principles, and when it
+doesn't apply. The file starts where the README line stops; repeating a big point is fine.
 
 A good principle can be checked against a diff: someone could say whether a change follows
 it. "Write clean code" fails that test. Only the owner of this brain adds or changes
