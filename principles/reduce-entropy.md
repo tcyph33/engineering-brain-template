@@ -1,5 +1,5 @@
 ---
-read-when: Any change to existing code, especially one that seems too small to matter: an added condition, option, flag, or a copied-and-tweaked function.
+read-when: Any change to existing code, especially one that seems too small to matter (an added condition, option, or flag, or a copied-and-tweaked function).
 ---
 
 # Strive to reduce entropy

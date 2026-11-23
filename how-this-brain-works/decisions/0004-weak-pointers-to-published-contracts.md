@@ -29,4 +29,5 @@ quarantined (`status: unverified`) until then.
 
 ## Consequences
 Published interfaces move rarely and usually with notice, so pointers stay valid longer.
-Staleness is detected rather than silently trusted. Until the lint exists, checks are manual.
+Staleness is detected rather than silently trusted: the brain scan flags pointers whose
+targets are gone or changed since `verified` (see 0016).

@@ -127,6 +127,11 @@ status: active       # optional; stale or unverified quarantines the note
 No `type`, `author`, `created`, or `updated` fields: the folder gives the type and git holds
 the history.
 
+Write frontmatter in exactly this shape: each value on one line, starting with plain text
+(not a quote, a bracket, a `>` or `|` block, or markup like `*` or a backtick), with no `: `
+inside it, which YAML reads as another field. The scan rejects anything else, so a note
+reads the same to it as to GitHub.
+
 **Exception:** a principle's or skill entry's `<name>.md` file has only `read-when`. Its
 one-line summary lives in the always-loaded README, and repeating it would create a copy
 that drifts.
@@ -353,15 +358,16 @@ sequence; entries here cover using skills outside it. See
   brain is created or edited.
 - **Only the owner commits.** Agents never commit to the brain. The owner reviews the diff and
   commits, which also catches anything written outside the normal file tools.
+- **Scan before committing.** `python3 how-this-brain-works/scan-for-brain-damage` checks
+  every rule in this manual that a script can: frontmatter, where files live and how they're
+  named, links, the always-loaded budget, decision references, and pointers against GitHub
+  (pass `--skip-pointers` to leave those out). Fix its errors before committing; its warnings
+  need a look. See [0016](decisions/0016-brain-maintains-itself.md).
+- **Change the scan with its tests.** When a rule here changes, change its check and its
+  tests together, then run `python3 how-this-brain-works/scan-for-brain-damage/tests`. Tests
+  that call the real GitHub are skipped, with the reason, when `gh` isn't signed in.
 - **Framework changes go to the template too.** If you maintain the template this brain came
   from, make any change outside `projects/` and the notes in `lessons-learned/` in both repos.
   See [0003](decisions/0003-self-contained-brains.md).
 
 See [0006](decisions/0006-gated-writes.md).
-
-## Not built yet
-
-- **Lint:** a script in this folder that checks frontmatter, verifies pointers still resolve,
-  flags notes whose sources changed since `verified`, flags files in unknown places, checks
-  the always-loaded budget, and lists consumers by `depends-on`. Until it exists, these checks
-  are manual. See [0016](decisions/0016-brain-maintains-itself.md).

@@ -24,8 +24,8 @@ content only; the skills live in the toolkit repo.
   couples every repo to one person's tool.
 - **A check inside repos' PRs that flags changes to things the brain references:** the brain
   doesn't own those repos, so it can't ask them to know about it.
-- **Brain-upkeep skills (lint, init) in the toolkit that know the brain's format:** breaks the
-  one-way rule; the brain maintains itself instead (see 0016).
+- **Brain-upkeep skills (a scan, init) in the toolkit that know the brain's format:** breaks
+  the one-way rule; the brain maintains itself instead (see 0016).
 
 ## Consequences
 Skills work with or without a brain; with one they work better. The brain must be loaded by

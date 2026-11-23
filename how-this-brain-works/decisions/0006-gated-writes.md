@@ -1,5 +1,5 @@
 ---
-summary: Writes to the brain are gated by a permission prompt, owner-only commits, and later lint, so unrelated work can't contaminate it.
+summary: Writes to the brain are gated by a permission prompt, owner-only commits, and a scan for brain damage, so unrelated work can't contaminate it.
 read-when: About to change the brain, or wondering why editing it prompts for permission.
 ---
 
@@ -15,7 +15,8 @@ Three layers, hardest first:
    by Claude Code rather than by instructions.
 2. Agents never commit to the brain. The owner reviews the diff and commits, which also catches
    writes made outside the file tools (for example through the shell).
-3. The lint (not built yet) flags files in unknown places and notes missing required fields.
+3. `scan-for-brain-damage`, run before committing, flags files in unknown places and notes
+   missing required fields (see 0016).
 
 On top of these, the root README tells agents the brain is read-only during normal work.
 

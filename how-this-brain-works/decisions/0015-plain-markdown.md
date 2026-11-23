@@ -6,7 +6,7 @@ read-when: Choosing link syntax or formatting for a note, or considering a note-
 # 0015 Plain markdown
 
 ## Context
-The brain is read by agents, by GitHub, by the owner, and later by its own lint. A note-taking
+The brain is read by agents, by GitHub, by the owner, and by its own scan. A note-taking
 app like Obsidian was considered.
 
 ## Decision
