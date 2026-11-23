@@ -32,7 +32,7 @@ live in code and published docs. Verify details before relying on them.
 | `when-to-use-skills/` | When you reach for each skill | Always loaded |
 | `lessons-learned/` | Mistakes made before and what to do instead, across projects | A lesson's cue matches your task |
 | `projects/` | Everything specific to one project | Working in any repo |
-| `how-this-brain-works/` | The manual and design decisions for this brain | Before proposing any change to it |
+| `how-this-brain-works/` | The manual and design decisions for this brain | To set it up, or before proposing any change to it |
 
 <!-- Always-loaded imports: Claude Code loads these files along with this one. Keep them
      within the budget in how-this-brain-works/README.md. -->

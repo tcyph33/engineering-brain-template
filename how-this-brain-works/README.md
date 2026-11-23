@@ -1,8 +1,10 @@
 # How This Brain Works
 
-The operating manual for this brain. Read it before adding, moving, or changing anything
-here. The reasons behind each rule are in [`decisions/`](decisions/); when a rule seems
-inconvenient, read its decision before working around it.
+The operating manual for this brain. To start a brain or set one up on a machine, see
+[Starting a new brain](#starting-a-new-brain) and [Setup](#setup). Read the rest before
+adding, moving, or changing anything here. The reasons behind each rule are in
+[`decisions/`](decisions/); when a rule seems inconvenient, read its decision before working
+around it.
 
 ## The idea
 
@@ -22,6 +24,40 @@ This brain mimics how an experienced engineer's memory works. It is not document
 
 See [0001](decisions/0001-mimic-an-engineers-memory.md) and
 [0002](decisions/0002-one-way-dependency.md).
+
+## Starting a new brain
+
+1. On GitHub, open
+   [engineering-brain-template](https://github.com/tcyph33/engineering-brain-template) and
+   choose **Use this template** to create a new **private** repo.
+2. Follow [Setup](#setup).
+3. Make it yours: the principles and skill entries are a starting point. The skills the
+   entries name come from [claude-toolkit](https://github.com/tcyph33/claude-toolkit);
+   install them or change the entries to skills you use.
+
+See [0003](decisions/0003-self-contained-brains.md).
+
+## Setup
+
+The brain is loaded automatically in every Claude Code session. Below, `<brain>` is where you
+cloned it, written from your home folder (for example `~/Github/software-engineering-brain`).
+See [0005](decisions/0005-always-on-everywhere.md).
+
+1. Clone the brain somewhere stable.
+2. Create or edit `~/.claude/CLAUDE.md` and add one line importing the brain's root README:
+   ```
+   @<brain>/README.md
+   ```
+   Every session then gets the brain, and repos never mention it. The root README imports the
+   other always-loaded files.
+3. In `~/.claude/settings.json`, add an `ask` permission rule so any edit under the brain
+   prompts first (merge it into existing `permissions` if there are any):
+   ```json
+   { "permissions": { "ask": ["Edit(<brain>/**)"] } }
+   ```
+   This only covers Claude's file-editing tools, not shell commands that write files. The
+   real gate is that only you commit.
+4. Check it: start a new session anywhere and ask what's in the brain's principles.
 
 ## How it's read
 
@@ -322,41 +358,6 @@ sequence; entries here cover using skills outside it. See
   See [0003](decisions/0003-self-contained-brains.md).
 
 See [0006](decisions/0006-gated-writes.md).
-
-## Setup
-
-The brain is loaded automatically in every Claude Code session. Below, `<brain>` is where you
-cloned it, written from your home folder (for example `~/Github/software-engineering-brain`).
-See [0005](decisions/0005-always-on-everywhere.md).
-
-1. Clone the brain somewhere stable.
-2. Create or edit `~/.claude/CLAUDE.md` and add one line importing the brain's root README:
-   ```
-   @<brain>/README.md
-   ```
-   Every session then gets the brain, and repos never mention it. The root README imports the
-   other always-loaded files.
-3. In `~/.claude/settings.json`, add an `ask` permission rule so any edit under the brain
-   prompts first (merge it into existing `permissions` if there are any):
-   ```json
-   { "permissions": { "ask": ["Edit(<brain>/**)"] } }
-   ```
-   This only covers Claude's file-editing tools, not shell commands that write files. The
-   real gate is that only you commit.
-4. Check it: start a new session anywhere and ask what's in the brain's principles.
-
-## Starting a new brain
-
-1. On GitHub, open
-   [engineering-brain-template](https://github.com/tcyph33/engineering-brain-template) and
-   choose **Use this template** to create a new **private** repo.
-2. Follow [Setup](#setup).
-3. Make it yours: the principles and skill entries are a starting point. Change them to how
-   you work. The skills the entries name come from
-   [claude-toolkit](https://github.com/tcyph33/claude-toolkit); install them or change the
-   entries to skills you use.
-
-See [0003](decisions/0003-self-contained-brains.md).
 
 ## Not built yet
 
