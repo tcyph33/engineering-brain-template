@@ -7,7 +7,10 @@ read-when: Deciding how to make a change (what to add, where, and how much), or 
 ## In practice
 
 Start from the most direct change that does the ask. Then grow it only as far as conceptual
-integrity requires, and stop there.
+integrity requires, and stop there. Checking integrity includes what relies on the part
+you're changing: its callers in the repo, consumers in other projects, and what each of them
+assumes. Changing how a part works shouldn't affect them; changing what it promises always
+does, however well it's designed.
 
 Ask: "stop sending marketing emails to customers who unsubscribed."
 
